@@ -24,7 +24,7 @@ typedef     signed long long int    s64;
 #define		NONE	0
 #define		none	0
 
-typedef		char					bool;
+//typedef		char					bool;
 
 #define		true	1
 #define		TRUE	1

@@ -15,7 +15,7 @@ typedef struct ProcCode
 {
 	unsigned short code;	// code type
 	unsigned short sarg;	// short argument
-	unsigned int larg;		// long argument
+	const void * larg;		// long argument
 }ProcCode;
 
 // The head of a ProcInst
@@ -26,10 +26,10 @@ typedef struct ProcHead
 	void*		destructor;		// Pointer to Destructor func (called when struct is destroyed)
 	void*		loop;			// Pointer to Loop func (this is called instead of code when it is not null)
 	char*		name;			// Pointer to name
-	ProcInst*	parent;			// Pointer to Parent ProcInst (If it is Main Proc, Main ProcInst Array Index instead)
-	ProcInst*	firstChild;		// Pointer to First Child ProcInst (0 if none)
-	ProcInst*	previous;		// Pointer to Previous ProcInst (0 if first)
-	ProcInst*	next;			// Pointer to Next Proc
+	struct ProcInst*	parent;			// Pointer to Parent ProcInst (If it is Main Proc, Main ProcInst Array Index instead)
+	struct ProcInst*	firstChild;		// Pointer to First Child ProcInst (0 if none)
+	struct ProcInst*	previous;		// Pointer to Previous ProcInst (0 if first)
+	struct ProcInst*	next;			// Pointer to Next Proc
 	u16			sleepTimer;			// Sleep Timer (each call to the sleep loop decrements it, the sleep loop will clear itself when this reaches 0)
 	u8			mark;			// Mark (Code 000F stores sarg to this byte, used by various funcs)
 	u8			bitField;			// Some kind of bitfield (see below for known bits)
@@ -87,8 +87,8 @@ typedef struct ProcInst
 // ProcInst Interfaces
 //TODO:unfinished yet
 
-#define newProcInst		(((ProcInst*)(*)(ProcCode*, int))0x8002C7D)		// Allocates a new ProcInst with ProcCode pointer (field 0x00&0x04) and its parent
-#define newProcInstB	(((ProcInst*)(*)(ProcCode*, int))0x8002CE1)		// Calls newProcinst, sets BitFlag2. Increments its parent's Block Counter.
-#define	breakLoop		(((ProcInst*)(*)(ProcCode*, int))0x8002E95)		// Sets loop function in ProcInst to null (used by loop function to break loop)
+#define newProcInst		((ProcInst*(*)(const ProcCode*, int))0x8002C7D)		// Allocates a new ProcInst with ProcCode pointer (field 0x00&0x04) and its parent
+#define newProcInstB	((ProcInst*(*)(const ProcCode*, int))0x8002CE1)		// Calls newProcinst, sets BitFlag2. Increments its parent's Block Counter.
+#define	breakLoop		((void(*)(ProcInst*))0x8002E95)		// Sets loop function in ProcInst to null (used by loop function to break loop)
 
 #endif /* PROC_H_ */

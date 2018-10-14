@@ -8,7 +8,7 @@
 #ifndef SPELL_ANIMATION_TABLE_H_
 #define SPELL_ANIMATION_TABLE_H_
 
-#include "type.h"
+#include "animation.h"
 
 typedef enum SpellAnimationID
 {
@@ -121,7 +121,7 @@ typedef enum SpellAnimationID
 #define playSpellAnimationPurge 0x0805FAE1
 #define playSpellAnimationAureola 0x08060285
 #define playSpellAnimationDivine 0x0805FE85
-#define playSpellAnimationApocalypse 0x08060289
+//#define playSpellAnimationApocalypse 0x08060289
 #define playSpellAnimationEclipse 0x0806028D
 #define playSpellAnimationFenrir 0x080608A5
 #define playSpellAnimationHeal 0x08061025
@@ -159,5 +159,7 @@ typedef enum SpellAnimationID
 #define playSpellAnimationNaglfar 0x08067B7D
 #define playSpellAnimationWretchedBreath 0x080687E5
 #define endSpellAnimationTable nullptr,nullptr
+
+extern void playSpellAnimationApocalypse(AnimationInterpreter *AIS);
 
 #endif /* SPELL_ANIMATION_TABLE_H_ */

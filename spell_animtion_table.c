@@ -84,4 +84,4 @@ const int spellAnimationTable[] = {
 };
 
 __attribute__((section(".spellAnimationTableAddr")))
-const int * const spellAnimationTableAddr = spellAnimationTable;
+const int* const spellAnimationTableAddr = spellAnimationTable;
