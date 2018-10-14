@@ -158,6 +158,6 @@ typedef enum SpellAnimationID
 #define playSpellAnimationDemonSurge 0x0806B4F9
 #define playSpellAnimationNaglfar 0x08067B7D
 #define playSpellAnimationWretchedBreath 0x080687E5
-#define endSpellAnimationTable nullptr
+#define endSpellAnimationTable nullptr,nullptr
 
 #endif /* SPELL_ANIMATION_TABLE_H_ */
