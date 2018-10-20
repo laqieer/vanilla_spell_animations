@@ -53,5 +53,11 @@ typedef struct AnimationInterpreter {
 #define	GetSomeBoolean				((int(*)(int))0x805A185)
 #define	endSpellAnimation			((int(*)())0x805516D)	// SetSomethingSpellFxToFalse
 #define	endCasting					((void(*)())0x8055001)	// StartEndEfxSpellCast
+#define	getTargetAIS				((AnimationInterpreter*(*)(AnimationInterpreter *))0x805A2B5)	// GetCoreAIStruct
+#define	getAnimationStartFrame		((int(*)())0x805598D)	// GetAnimationStartFrameMaybe
+#define scrollScreen				((void(*)(AnimationInterpreter*, short))0x80533D1)	// MoveBattleCameraOnto
+#define	playHitSound				((void(*)(AnimationInterpreter*))0x8072451)
+#define	reduceHPBar					((void(*)(AnimationInterpreter*,int))0x8055279)	// ThisMakesTheHPInSpellAnimGoAway
+#define	playSound					((void(*)(int, int, int, int))0x80729A5)
 
 #endif /* ANIMATION_H_ */
