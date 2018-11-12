@@ -8,6 +8,8 @@
 #include "animation.h"
 #include "proc.h"
 
+#ifndef FE6
+
 const char efxApocalypse[] = "efxApocalypse";
 
 void playApocalypseMagicCircle(AnimationInterpreter *targetAIS, short a2)
@@ -172,3 +174,5 @@ void playSpellAnimationApocalypse(AnimationInterpreter *AIS)
 	index = GetSomeAISRelatedIndexMaybe(AIS);
 	instance->body.freeSpace[0] = GetSomeBoolean(index);
 }
+
+#endif

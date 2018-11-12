@@ -46,6 +46,84 @@ typedef struct AnimationInterpreter {
 
 // spell animation functions
 
+#ifdef __CDT_PARSER__
+#define FE8U
+#endif
+
+#ifdef FE6
+
+#define	beginSpellAnimation			((int(*)())0x80474B1)	// SetSomethingSpellFxToTrue
+#define	beginCasting				((void(*)())0x8047301)	// NewEfxSpellCast
+#define	resetBG1					((void(*)())0x80474C9)	// ClearBG1Setup
+#define	GetSomeAISRelatedIndexMaybe	((int(*)(AnimationInterpreter*))0x804B869)
+#define	GetSomeBoolean				((int(*)(int))0x804B6D9)
+#define	endSpellAnimation			((int(*)())0x80474BD)	// SetSomethingSpellFxToFalse
+#define	endCasting					((void(*)())0x8047359)	// StartEndEfxSpellCast
+#define	getTargetAIS				((AnimationInterpreter*(*)(AnimationInterpreter *))0x804B80D)	// GetCoreAIStruct
+#define	getAnimationStartFrame		((int(*)())0x8047C29)	// GetAnimationStartFrameMaybe
+#define scrollScreen				((void(*)(AnimationInterpreter*, short))0x8045C91)	// MoveBattleCameraOnto
+#define	playHitSound				((void(*)(AnimationInterpreter*))0x805C359)
+#define	reduceHPBar					((void(*)(AnimationInterpreter*,int))0x8047601)	// ThisMakesTheHPInSpellAnimGoAway
+#define	playSound					((void(*)(int, int, int, int))0x805C805)
+
+#endif
+
+#ifdef FE7J
+
+#define	beginSpellAnimation			((int(*)())0x80507CD)	// SetSomethingSpellFxToTrue
+#define	beginCasting				((void(*)())0x8050349)	// NewEfxSpellCast
+#define	resetBG1					((void(*)())0x80507E5)	// ClearBG1Setup
+#define	GetSomeAISRelatedIndexMaybe	((int(*)(AnimationInterpreter*))0x8054FED)
+#define	GetSomeBoolean				((int(*)(int))0x8054E75)
+#define	endSpellAnimation			((int(*)())0x8053C11)	// SetSomethingSpellFxToFalse
+#define	endCasting					((void(*)())0x80503A1)	// StartEndEfxSpellCast
+#define	getTargetAIS				((AnimationInterpreter*(*)(AnimationInterpreter *))0x8054F91)	// GetCoreAIStruct
+#define	getAnimationStartFrame		((int(*)())0x8050F55)	// GetAnimationStartFrameMaybe
+#define scrollScreen				((void(*)(AnimationInterpreter*, short))0x804EC75)	// MoveBattleCameraOnto
+#define	playHitSound				((void(*)(AnimationInterpreter*))0x8068501)
+#define	reduceHPBar					((void(*)(AnimationInterpreter*,int))0x805091D)	// ThisMakesTheHPInSpellAnimGoAway
+#define	playSound					((void(*)(int, int, int, int))0x80689D1)
+
+#endif
+
+#ifdef FE7U
+
+#define	beginSpellAnimation			((int(*)())0x804FFF1)	// SetSomethingSpellFxToTrue
+#define	beginCasting				((void(*)())0x804FB6D)	// NewEfxSpellCast
+#define	resetBG1					((void(*)())0x8050009)	// ClearBG1Setup
+#define	GetSomeAISRelatedIndexMaybe	((int(*)(AnimationInterpreter*))0x8054805)
+#define	GetSomeBoolean				((int(*)(int))0x805468D)
+#define	endSpellAnimation			((int(*)())0x8053429)	// SetSomethingSpellFxToFalse
+#define	endCasting					((void(*)())0x804FBC5)	// StartEndEfxSpellCast
+#define	getTargetAIS				((AnimationInterpreter*(*)(AnimationInterpreter *))0x80547A9)	// GetCoreAIStruct
+#define	getAnimationStartFrame		((int(*)())0x8050779)	// GetAnimationStartFrameMaybe
+#define scrollScreen				((void(*)(AnimationInterpreter*, short))0x804E499)	// MoveBattleCameraOnto
+#define	playHitSound				((void(*)(AnimationInterpreter*))0x8067D15)
+#define	reduceHPBar					((void(*)(AnimationInterpreter*,int))0x8050141)	// ThisMakesTheHPInSpellAnimGoAway
+#define	playSound					((void(*)(int, int, int, int))0x80681E5)
+
+#endif
+
+#ifdef FE8J
+
+#define	beginSpellAnimation			((int(*)())0x8056109)	// SetSomethingSpellFxToTrue
+#define	beginCasting				((void(*)())0x8055C79)	// NewEfxSpellCast
+#define	resetBG1					((void(*)())0x8056121)	// ClearBG1Setup
+#define	GetSomeAISRelatedIndexMaybe	((int(*)(AnimationInterpreter*))0x805B0B5)
+#define	GetSomeBoolean				((int(*)(int))0x805AF29)
+#define	endSpellAnimation			((int(*)())0x8056115)	// SetSomethingSpellFxToFalse
+#define	endCasting					((void(*)())0x8055E81)	// StartEndEfxSpellCast
+#define	getTargetAIS				((AnimationInterpreter*(*)(AnimationInterpreter *))0x805B059)	// GetCoreAIStruct
+#define	getAnimationStartFrame		((int(*)())0x8056921)	// GetAnimationStartFrameMaybe
+#define scrollScreen				((void(*)(AnimationInterpreter*, short))0x80540C1)	// MoveBattleCameraOnto
+#define	playHitSound				((void(*)(AnimationInterpreter*))0x8074935)
+#define	reduceHPBar					((void(*)(AnimationInterpreter*,int))0x8056221)	// ThisMakesTheHPInSpellAnimGoAway
+#define	playSound					((void(*)(int, int, int, int))0x8074E81)
+
+#endif
+
+#ifdef FE8U
+
 #define	beginSpellAnimation			((int(*)())0x8055161)	// SetSomethingSpellFxToTrue
 #define	beginCasting				((void(*)())0x8054FA9)	// NewEfxSpellCast
 #define	resetBG1					((void(*)())0x8055179)	// ClearBG1Setup
@@ -59,5 +137,7 @@ typedef struct AnimationInterpreter {
 #define	playHitSound				((void(*)(AnimationInterpreter*))0x8072451)
 #define	reduceHPBar					((void(*)(AnimationInterpreter*,int))0x8055279)	// ThisMakesTheHPInSpellAnimGoAway
 #define	playSound					((void(*)(int, int, int, int))0x80729A5)
+
+#endif
 
 #endif /* ANIMATION_H_ */

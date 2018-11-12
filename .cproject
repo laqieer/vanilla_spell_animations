@@ -2,7 +2,10 @@
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754" moduleId="org.eclipse.cdt.core.settings" name="FE8U_Debug">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE8U"/>
+				</macros>
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
@@ -14,7 +17,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754" name="Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754" name="FE8U_Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
 					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754." name="/" resourcePath="">
 						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1108766402" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1108766402.1232483779" name=""/>
@@ -33,6 +36,10 @@
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.670857896" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -msoft-float -mthumb-interwork -mabi=aapcs" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.67940316" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.134391675" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.2133819504" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;${GAME_VER}&quot;"/>
+									<listOptionValue builtIn="false" value="FE8U"/>
+								</option>
 								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1692370094" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
 							</tool>
 							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.1694190093" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
@@ -41,13 +48,14 @@
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.1436546620" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.956055047" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.1280318798" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
-								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.569442771" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.569442771" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.381770957" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym.2123119562" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols"/>
 								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.1193386818" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
 							</tool>
 							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.104210011" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
 							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.984784157" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
-								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.415324797" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="../link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.415324797" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.1314035430" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.218103111" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" valueType="stringList">
 									<listOptionValue builtIn="false" value="--no-check-sections"/>
@@ -65,7 +73,10 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339" moduleId="org.eclipse.cdt.core.settings" name="Release">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339" moduleId="org.eclipse.cdt.core.settings" name="FE8U_Release">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE8U"/>
+				</macros>
 				<externalSettings>
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/vanilla_spell_animations"/>
@@ -83,7 +94,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339" name="Release" parent="cdt.managedbuild.config.gnu.cygwin.exe.release" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339" name="FE8U_Release" parent="cdt.managedbuild.config.gnu.cygwin.exe.release" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
 					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339." name="/" resourcePath="">
 						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1940683719" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1940683719.2138767963" name=""/>
@@ -102,6 +113,9 @@
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.828515877" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" value="true" valueType="boolean"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.663024226" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -mthumb-interwork -mabi=aapcs" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.874946376" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.566356869" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${GAME_VER}"/>
+								</option>
 								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.659185089" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
 							</tool>
 							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.320368167" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
@@ -109,17 +123,19 @@
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.416376979" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.915829041" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" value="true" valueType="boolean"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.1869396788" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
-								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.183732062" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" value="-mthumb-interwork -mapcs-32" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.183732062" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.917258998" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
 								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.1095435100" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
 							</tool>
 							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.1105460843" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
 							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.1982770261" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
-								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.884405369" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="../link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.884405369" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.309176720" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.338944901" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" useByScannerDiscovery="false" valueType="stringList">
 									<listOptionValue builtIn="false" value="--no-check-sections"/>
 								</option>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused.903990694" name="Remove unused sections" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip.1013830578" name="Strip all symbols" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.40118820" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -132,24 +148,593 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.563956614">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.563956614" moduleId="org.eclipse.cdt.core.settings" name="FE8J_Debug">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE8J"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.563956614" name="FE8J_Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.563956614." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.841335974" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.841335974.1250400039" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Debug" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.385898111" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.43023526" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1946827152" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.738808259" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.201205172" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1033310371" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1029405701" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.831416862" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.1376115939" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.2121280509" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.1363757527" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.1201220230" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -msoft-float -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.1769210210" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.985818369" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.950851416" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;${GAME_VER}&quot;"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1619398793" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.866260466" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="true" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug.1580217164" name="Generate debugging information (-g)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug" useByScannerDiscovery="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.1936958919" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.22426568" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.736123271" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.1624200082" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.2116597392" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.878817585" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym.1405498115" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.99096869" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.580961237" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.1929146392" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.2046137875" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.1191514149" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.800576967" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.288513618" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.1562453787" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1894909669">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1894909669" moduleId="org.eclipse.cdt.core.settings" name="FE8J_Release">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE8J"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/vanilla_spell_animations"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/vanilla_spell_animations/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="vanilla_spell_animations" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1894909669" name="FE8J_Release" parent="cdt.managedbuild.config.gnu.cygwin.exe.release" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1894909669." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1752575913" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1752575913.205134718" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Release" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.895819732" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.609875250" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.926862383" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1067447618" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.191781814" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1916808224" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1874886" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.518377226" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.2133487000" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.1053166766" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.159298569" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.1817555559" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.1210226192" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.1282826071" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.160486092" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${GAME_VER}"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.764677862" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.1446274750" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.1436460406" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.1280576865" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.1155826684" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.1507143417" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.638905507" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.475575958" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.378078351" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.408183461" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.1054919920" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.1537010141" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.269232483" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.531448855" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused.1407996579" name="Remove unused sections" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip.77246508" name="Strip all symbols" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.1882086802" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.659922637" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.398243593">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.398243593" moduleId="org.eclipse.cdt.core.settings" name="FE7U_Debug">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE7U"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.398243593" name="FE7U_Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.398243593." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.2049196511" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.2049196511.1052875584" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Debug" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.1001510893" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.781996827" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1335605525" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.755475054" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.1037879009" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.854153967" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1730358595" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.503278517" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.228436658" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.45278530" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.1806154324" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.750512974" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -msoft-float -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.618560174" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.589574205" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.1077657989" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;${GAME_VER}&quot;"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1363073761" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.1212406455" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="true" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug.1830458518" name="Generate debugging information (-g)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug" useByScannerDiscovery="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.813045600" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.1749384327" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.858466043" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.700383246" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.234316589" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.321617560" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym.609937732" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.254815411" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.817534576" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.22668101" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.58508912" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.342113354" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.1979307955" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.669527423" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.193809616" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1750511093">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1750511093" moduleId="org.eclipse.cdt.core.settings" name="FE7U_Release">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE7U"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/vanilla_spell_animations"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/vanilla_spell_animations/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="vanilla_spell_animations" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1750511093" name="FE7U_Release" parent="cdt.managedbuild.config.gnu.cygwin.exe.release" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1750511093." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.294186869" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.294186869.551242737" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Release" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.1866008698" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.57450606" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.98678301" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.2088291551" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.1115488937" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.727331071" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1605598067" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.164173833" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.1019228671" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.1723585011" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.888394978" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.216157461" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.600604025" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.1607566437" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.311603870" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${GAME_VER}"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.767788739" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.57851267" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.1862537936" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.1610970247" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.2055060709" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.3564537" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.943057927" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.290383330" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.147609332" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.1719538862" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.387333629" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.291806845" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.1545010188" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.1559085866" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused.9916598" name="Remove unused sections" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip.2112613790" name="Strip all symbols" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.2014316747" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.1183780689" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.70861626">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.70861626" moduleId="org.eclipse.cdt.core.settings" name="FE7J_Debug">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE7J"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.70861626" name="FE7J_Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.70861626." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.230682548" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.230682548.1912107835" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Debug" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.2016167846" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.231578758" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1392201602" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.35374260" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.60545904" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1183563363" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1264164994" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.1272728746" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.1448237461" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.278156738" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.1886701928" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.859465404" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -msoft-float -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.106913862" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.1322050001" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.1938622355" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;${GAME_VER}&quot;"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1878904280" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.479742458" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="true" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug.953071796" name="Generate debugging information (-g)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug" useByScannerDiscovery="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.1104122488" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.234894100" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.1022128334" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.350974840" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.348044468" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.1433016804" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym.207006884" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.1651936154" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.675456915" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.1683321863" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.79241054" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.1270460040" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.411253710" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.2119985244" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.1116353584" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1930860508">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1930860508" moduleId="org.eclipse.cdt.core.settings" name="FE7J_Release">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE7J"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/vanilla_spell_animations"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/vanilla_spell_animations/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="vanilla_spell_animations" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1930860508" name="FE7J_Release" parent="cdt.managedbuild.config.gnu.cygwin.exe.release" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.1930860508." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1395849637" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1395849637.2129812999" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Release" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.2094313744" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.50165517" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1362014888" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.198061380" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.1490079275" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.172311285" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.550025997" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.1390346243" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.1802050669" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.446127646" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.1518397614" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.2115397166" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.1928302310" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.1725400589" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.704278385" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${GAME_VER}"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1229339658" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.2087908783" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.876465594" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.298325427" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.1682537481" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.1087753745" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.1066621433" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.22390840" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.264905403" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.1072832938" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.2118399685" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.328522426" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.1188428977" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.398186883" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused.900000393" name="Remove unused sections" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip.1994736470" name="Strip all symbols" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.611919646" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.308156690" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.1375639617">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.1375639617" moduleId="org.eclipse.cdt.core.settings" name="FE6_Debug">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE6"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.1375639617" name="FE6_Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.1375639617." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.724276274" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.724276274.926817272" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Debug" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.1459457518" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.695518752" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1719554014" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1137176136" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.560689842" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.none" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1212538565" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.1048725539" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.1511269033" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.1094414768" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.1835274460" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.2030328591" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.1116839077" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -msoft-float -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.967117402" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.491840415" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.1938593736" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;${GAME_VER}&quot;"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1676020043" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.1908486888" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="true" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug.1576922783" name="Generate debugging information (-g)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.debug" useByScannerDiscovery="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.383305292" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.506065016" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.259578120" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" useByScannerDiscovery="false" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.1525232860" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.1268766151" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.998374193" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym.61823791" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.1414011383" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.1062757615" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.249032952" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.1569639563" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.13662742" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.543460489" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.796510224" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.2035301736" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.726889537">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.726889537" moduleId="org.eclipse.cdt.core.settings" name="FE6_Release">
+				<macros>
+					<stringMacro name="GAME_VER" type="VALUE_TEXT" value="FE6"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/vanilla_spell_animations"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/vanilla_spell_animations/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="vanilla_spell_animations" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.726889537" name="FE6_Release" parent="cdt.managedbuild.config.gnu.cygwin.exe.release" postannouncebuildStep="dump GBA ROM from ELF" postbuildStep="arm-none-eabi-objcopy -O binary ${ProjName}.elf ${ProjName}.gba" preannouncebuildStep="support conditional statement in linker script" prebuildStep="mv ../link2ROM.ld ../link2ROM.ld.c &amp;&amp; arm-none-eabi-gcc -E -P -D${GAME_VER} -o link2ROM.ld ../link2ROM.ld.c &amp;&amp; mv ../link2ROM.ld.c ../link2ROM.ld">
+					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.726889537." name="/" resourcePath="">
+						<toolChain id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1423365714" name="GCC 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.toolchain.var.gcc-8.1.0-arm-none-eabi.1423365714.784409449" name=""/>
+							<builder buildPath="${workspace_loc:/vanilla_spell_animations}/Release" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder.1089092579" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.target.builder"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi.531290880" name="GCC C++ Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.14141282" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.305573914" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.2023757229" name="GCC C Compiler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi">
+								<option defaultValue="gnu.c.optimization.level.most" id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt.1217046047" name="Optimization Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.opt" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug.406087580" name="Debug Level" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.debug" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu.96367911" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu.1343663036" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb.1238205674" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian.947795649" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.endian" useByScannerDiscovery="false" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.auto" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch.2111067653" name="Do not search system directories (-nostdinc)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.preproc.nosearch" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other.1057331406" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.other" useByScannerDiscovery="false" value="-mlong-calls -mthumb-interwork -mabi=aapcs" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi.970241554" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym.156001522" name="Defined symbols (-D)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.option.defsym" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="${GAME_VER}"/>
+								</option>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.834948114" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi.431353544" name="GCC Assembler 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu.956309479" name="CPU (-mcpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.cpu" value="arm7tdmi" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu.1879477686" name="FPU (-mfpu)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fpu" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb.49495864" name="Thumb (-mthumb)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.thumb" value="true" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.1877151942" name="Byte Order" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian" value="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other.1787356539" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.other" useByScannerDiscovery="false" value="-mthumb-interwork -mapcs-32 --defsym ${GAME_VER}=1" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi.2107706109" name="Float ABI (-mfloat-abi)" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.option.fabi" useByScannerDiscovery="false" value="soft" valueType="string"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input.998991823" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi.615437823" name="GCC C++ Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.cpp.linker.var.gcc-8.1.0-arm-none-eabi"/>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi.736908187" name="GCC C Linker 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.var.gcc-8.1.0-arm-none-eabi">
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script.843560825" name="Linker script" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.script" useByScannerDiscovery="false" value="link2ROM.ld" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags.1710764684" name="Other flags" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras.1559262222" name="Other options (-Xlinker [option])" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.extras" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="--no-check-sections"/>
+								</option>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused.73795257" name="Remove unused sections" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.removeunused" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip.1878482235" name="Strip all symbols" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.option.strip" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input.262138749" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.linker.input">
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi.2072811767" name="GCC Archiver 8.1.0 [arm-none-eabi]" superClass="com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.archiver.var.gcc-8.1.0-arm-none-eabi"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="vanilla_spell_animations.cdt.managedbuild.target.gnu.cygwin.exe.1982241893" name="Executable" projectType="cdt.managedbuild.target.gnu.cygwin.exe"/>
-	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.release.251179755;cdt.managedbuild.config.gnu.cygwin.exe.release.251179755.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.1259316816;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1828112027">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754;cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.694156689;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1355912843">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339;cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.886491388;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1820086581">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.324709403;cdt.managedbuild.config.gnu.cygwin.exe.debug.324709403.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.349173276;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.222314110">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
@@ -160,6 +745,32 @@
 			<resource resourceType="PROJECT" workspacePath="/vanilla_spell_animations"/>
 		</configuration>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.release.251179755;cdt.managedbuild.config.gnu.cygwin.exe.release.251179755.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.1259316816;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1828112027">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754;cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.694156689;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1355912843">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339;cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.;com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.681916993;com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.659185089">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.arm.managedbuilder.gcc.ARMGCCDiscoveryProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339;cdt.managedbuild.config.gnu.cygwin.exe.release.1913888339.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.886491388;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1820086581">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754;cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.;com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.1469621858;com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1692370094">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.arm.managedbuilder.gcc.ARMGCCDiscoveryProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.324709403;cdt.managedbuild.config.gnu.cygwin.exe.debug.324709403.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.349173276;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.222314110">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.1375639617;cdt.managedbuild.config.gnu.cygwin.exe.debug.456797754.1375639617.;com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.var.gcc-8.1.0-arm-none-eabi.560689842;com.arm.eclipse.cdt.managedbuild.ds5.gcc.baremetal.tool.c.compiler.input.1676020043">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.arm.managedbuilder.gcc.ARMGCCDiscoveryProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>

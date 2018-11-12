@@ -51,3 +51,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 /Debug/
+/Release/
+/FE8U_Debug/
+/FE8U_Release/
+/FE7J_Release/
